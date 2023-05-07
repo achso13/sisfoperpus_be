@@ -45,7 +45,11 @@ class JWTAuthFilter implements FilterInterface
         $token = null;
        
         if (!$header) {
-            return $this->failUnauthorized('Token not found');
+            $reponse = [
+                'status' => "error",
+                'messages' => 'Token not found'
+            ];
+            return $this->respond($reponse, 401);
         }
 
         if(!empty($header)) {
@@ -57,7 +61,11 @@ class JWTAuthFilter implements FilterInterface
         try {
             $decoded = JWT::decode($token, new Key($key, 'HS256'));
         } catch (\Exception $e) {
-            return $this->failUnauthorized('Invalid token');
+            $reponse = [
+                'status' => "error",
+                'messages' => 'Token invalid'
+            ];
+            return $this->respond($reponse, 401);
         }
 
         return $request;
