@@ -21,6 +21,7 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'jwtAuth'       => \App\Filters\JWTAuthFilter::class,
     ];
 
     /**
@@ -32,6 +33,7 @@ class Filters extends BaseConfig
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
+            // 'jwtAuth'
         ],
         'after' => [
             'toolbar',
