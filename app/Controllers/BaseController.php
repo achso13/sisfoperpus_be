@@ -35,7 +35,9 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = [
+        'jwt_helper'
+    ];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
