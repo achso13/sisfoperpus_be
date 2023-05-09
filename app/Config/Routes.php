@@ -34,6 +34,13 @@ $routes->get('/', 'Home::index');
 $routes->post('/register', 'Auth::register');
 $routes->post('/login', 'Auth::login');
 
+$routes->get('anggota', 'Anggota::index');
+$routes->get('anggota/(:num)', 'Anggota::show/$1');
+$routes->post('anggota', 'Anggota::create');
+$routes->put('anggota/(:num)', 'Anggota::update/$1');
+$routes->delete('anggota/(:num)', 'Anggota::delete/$1');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
