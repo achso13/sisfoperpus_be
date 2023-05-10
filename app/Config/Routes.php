@@ -34,6 +34,9 @@ $routes->get('/', 'Home::index');
 $routes->post('/register', 'Auth::register');
 $routes->post('/login', 'Auth::login');
 
+// Buku
+$routes->resource('buku');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
