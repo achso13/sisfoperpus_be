@@ -34,6 +34,15 @@ $routes->get('/', 'Home::index');
 $routes->post('/register', 'Auth::register');
 $routes->post('/login', 'Auth::login');
 
+// Kategori
+$routes->get('/kategori', 'Kategori::index');
+$routes->get('/kategori/(:num)', 'Kategori::show/$1');
+$routes->post('/kategori', 'Kategori::create');
+$routes->put('/kategori/(:num)', 'Kategori::update/$1');
+$routes->delete('/kategori/(:num)', 'Kategori::delete/$1');
+$routes->get('/kategori/(:num)/buku', 'Kategori::getBukuByKategori/$1');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class BukuModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'bukus';
+    protected $table            = 'buku';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $protectFields    = false;
