@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class KategoriModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'kategoris';
+    protected $table            = 'kategori';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $protectFields    = false;
