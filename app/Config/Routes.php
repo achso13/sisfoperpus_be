@@ -34,6 +34,14 @@ $routes->get('/', 'Home::index');
 $routes->post('/register', 'Auth::register');
 $routes->post('/login', 'Auth::login');
 
+
+// Peminjaman
+$routes->get('peminjaman', 'Peminjaman::index');
+$routes->get('peminjaman/(:num)', 'Peminjaman::show/$1');
+$routes->post('peminjaman', 'Peminjaman::create');
+$routes->put('peminjaman/(:num)', 'Peminjaman::update/$1');
+$routes->delete('peminjaman/(:num)', 'Peminjaman::delete/$1');
+
 // Anggota
 $routes->get('anggota', 'Anggota::index');
 $routes->get('anggota/(:num)/peminjaman', 'Anggota::peminjaman/$1');
@@ -49,7 +57,6 @@ $routes->post('/kategori', 'Kategori::create');
 $routes->put('/kategori/(:num)', 'Kategori::update/$1');
 $routes->delete('/kategori/(:num)', 'Kategori::delete/$1');
 $routes->get('/kategori/(:num)/buku', 'Kategori::getBukuByKategori/$1');
-
 
 
 /*
