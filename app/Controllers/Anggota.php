@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\PeminjamanModel;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\AnggotaModel;
 
@@ -139,6 +140,33 @@ class Anggota extends BaseController
                     'userId' => $id,
                 ]
             ], 200);
+        }
+    }
+
+    public function peminjaman($id)
+    {
+        $anggotaModel = new AnggotaModel();
+        $peminjamanModel = new PeminjamanModel();
+
+        $data = $anggotaModel->find($id);
+
+        if ($data) {
+            $peminjaman = $peminjamanModel->where('id_anggota', $id)->findAll();
+            $total = $peminjamanModel->where('id_anggota', $id)->countAllResults();
+            return $this->respond([
+                'status' => 'success',
+                'message' => 'Peminjaman berhasil ditemukan',
+                'data' => [
+                    'total' => $total,
+                    'peminjaman' => $peminjaman
+                ]
+            ], 200);
+        } else {
+            return $this->respond([
+                'status' => 'error',
+                'message' => 'Anggota tidak ditemukan',
+                'error' => null
+            ], 404);
         }
     }
 }

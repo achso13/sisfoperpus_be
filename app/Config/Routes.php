@@ -35,6 +35,7 @@ $routes->post('/register', 'Auth::register');
 $routes->post('/login', 'Auth::login');
 
 $routes->get('anggota', 'Anggota::index');
+$routes->get('anggota/(:num)/peminjaman', 'Anggota::peminjaman/$1');
 $routes->get('anggota/(:num)', 'Anggota::show/$1');
 $routes->post('anggota', 'Anggota::create');
 $routes->put('anggota/(:num)', 'Anggota::update/$1');
