@@ -34,6 +34,13 @@ $routes->get('/', 'Home::index');
 $routes->post('/register', 'Auth::register');
 $routes->post('/login', 'Auth::login');
 
+// Peminjaman
+$routes->get('peminjaman', 'Peminjaman::index');
+$routes->get('peminjaman/(:num)', 'Peminjaman::show/$1');
+$routes->post('peminjaman', 'Peminjaman::create');
+$routes->put('peminjaman/(:num)', 'Peminjaman::update/$1');
+$routes->delete('peminjaman/(:num)', 'Peminjaman::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
