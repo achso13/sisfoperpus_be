@@ -34,6 +34,8 @@ $routes->get('/', 'Home::index');
 $routes->post('/register', 'Auth::register');
 $routes->post('/login', 'Auth::login');
 
+// Buku
+$routes->resource('buku');
 
 // Peminjaman
 $routes->get('peminjaman', 'Peminjaman::index');
@@ -57,6 +59,7 @@ $routes->post('/kategori', 'Kategori::create');
 $routes->put('/kategori/(:num)', 'Kategori::update/$1');
 $routes->delete('/kategori/(:num)', 'Kategori::delete/$1');
 $routes->get('/kategori/(:num)/buku', 'Kategori::getBukuByKategori/$1');
+
 
 
 /*
